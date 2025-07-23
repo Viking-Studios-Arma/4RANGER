@@ -18,16 +18,16 @@ function Is-DevBranch {
 
 # Check if the current branch is a development branch and update the build path accordingly
 if (Is-DevBranch) {
-    $buildPath = "$projectRoot\.build\@Black Aegis - Core - DEV"
+    $buildPath = "$projectRoot\.build\@4 RANGER - Core - DEV"
     $cachePath      = "$projectRoot\.build\dev-cache"
     Write-Output "Development branch detected, using build path: $buildPath"
 } else {
-    $buildPath      = "$projectRoot\.build\@Black Aegis - Core"
+    $buildPath      = "$projectRoot\.build\@4 RANGER - Core"
     $cachePath      = "$projectRoot\.build\cache"
     Write-Output "Stable branch detected, using build path: $buildPath"
 }
 
-$modPrefix      = "BAPMC_"
+$modPrefix      = "4RANGER_"
 $downloadUrl    = "https://github.com/KoffeinFlummi/armake/releases/download/v0.6.3/armake_v0.6.3.zip"
 $armake2        = "$projectRoot\tools\armake2.exe"
 $armake         = "$projectRoot\tools\armake.exe"

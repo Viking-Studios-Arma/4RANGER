@@ -59,6 +59,54 @@ private _VS_core_settings = [
         true
     ],
 	[
+        "VS_core_camo_whitelist_woodland",
+        "EDITBOX",
+        ["Woodland", "Woodland Camo whitelist"],
+        ["Viking Studios Arsenal", "Uniform Whitelists"],
+        "[]",
+        1,
+        {
+            // One day this will re-init all arsenals that have this filter set
+        },
+        true
+    ],
+	[
+        "VS_core_camo_whitelist_multicam",
+        "EDITBOX",
+        ["Multicam", "Multicam Camo whitelist"],
+        ["Viking Studios Arsenal", "Uniform Whitelists"],
+        "[]",
+        1,
+        {
+            // One day this will re-init all arsenals that have this filter set
+        },
+        true
+    ],
+	[
+        "VS_core_camo_whitelist_desert",
+        "EDITBOX",
+        ["Desert", "Desert Camo whitelist"],
+        ["Viking Studios Arsenal", "Uniform Whitelists"],
+        "[]",
+        1,
+        {
+            // One day this will re-init all arsenals that have this filter set
+        },
+        true
+    ],
+	[
+        "VS_core_camo_whitelist_Artic",
+        "EDITBOX",
+        ["Artic", "Artic Camo whitelist"],
+        ["Viking Studios Arsenal", "Uniform Whitelists"],
+        "[]",
+        1,
+        {
+            // One day this will re-init all arsenals that have this filter set
+        },
+        true
+    ],
+	[
         "VS_core_arsenal_blacklist_cdt",
         "EDITBOX",
         ["Cadet", "Cadet equipment Restrictions"],
@@ -149,4 +197,31 @@ private _VS_core_settings = [
 ];
 
 {_x call CBA_Settings_fnc_init;} forEach _VS_core_settings;
+
+// Create a climate select setting for each detected world
+private _name = "";
+private _prettyName = "";
+{
+	_name = configName _x;
+	_prettyName = getText (configfile >> "CfgWorlds" >> _name >> "description");
+	[
+		format["vs_core_climate_%1", _name],
+		"LIST",
+		[format["Map Climate - %1", _prettyName], "Select the appropriate climate for this map"],
+		["4RANGER Arsenal", "World Climates"],
+		[
+			["all", "woodland", "multicam", "desert", "arctic"], // Code (keep the same, else settings will reset)
+			["All", "Woodland", "Multicam", "Desert", "Arctic"], // Display name
+			0
+		],
+		1,
+		{},
+		true
+	] call CBA_Settings_fnc_init;
+} forEach ([
+	("true" configClasses (configFile >> "CfgWorldList")),
+	[],
+	{getText (configFile >> "CfgWorlds" >> (configName _x) >> "description")}
+] call BIS_fnc_sortBy);
+
 CHVD_allowNoGrass = false;

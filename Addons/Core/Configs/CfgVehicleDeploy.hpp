@@ -14,7 +14,7 @@ License GPL-2.0
 class child : parent { \
 	class ACE_Actions { \
 		class ACE_MainActions { \
-			class vs_cORE_VehicleDeploy { \
+			class vs_core_VehicleDeploy { \
 				displayName = "Deploy"; \
 				distance = 4; \
 				icon = "\A3\ui_f\data\GUI\Rsc\RscDisplayGarage\animationSources_ca.paa"; \

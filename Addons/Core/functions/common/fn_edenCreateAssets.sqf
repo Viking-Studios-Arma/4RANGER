@@ -37,7 +37,7 @@ params [
     ["_jets", 0, [0]],
     ["_gunships", 0, [0]],
     ["_planes", 0, [0]],
-    ["_createDefaults", true, [true]]
+    ["_createDefaults", false, [false]]
 ];
 
 if (_callsign == "") then {

@@ -11,8 +11,8 @@ Author:
 License GPL-2.0
 ---------------------------------------------------------------------------- */
 class ACE_ZeusActions {
-	class vs_cORE_Zeus_Tools {
-		displayName = "Black Aegis - PMC Tools";
+	class vs_core_Zeus_Tools {
+		displayName = "4RANGER Tools";
 		icon = "\A3\ui_f\data\igui\cfg\actions\repair_ca.paa";
 
 		class Get_Dead_Players {

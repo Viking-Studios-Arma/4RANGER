@@ -5,7 +5,8 @@
     Limits arsenal based on player rank and further restricts for non-IC players.
 
     Parameters:
-    0: _player
+    0: OBJECT - The player (_player)
+    1: OBJECT - The arsenal box being opened (_x)
 
     Returns:
     Nothing.
@@ -18,7 +19,7 @@
     Amateur-God (Carmichael)
     License GPL-2.0
 ---------------------------------------------------------------------------- */
-params [["_player", player, [objNull]]];
+params ["_player", "_x"];
 
 // Check if the player object is valid
 if (isNull _player) exitWith {
@@ -29,39 +30,40 @@ if (isNull _player) exitWith {
 private _description = _player get3DENAttribute "description";
 private _type = typeOf _player;
 private _medicClass = _player getVariable ["ace_medical_medicclass", -1];
+private _climate = missionNamespace getVariable [format["vs_core_climate_%1", worldName], "all"];
 
 private _isIC = (
     (_description in ["1: Section Leader", "5: Team Leader"]) ||
     (_type in [
-        "BAPMC_IC"
+        "vsc_4RANGER_IC"
     ])
 );
 
 private _isPilot = (
     (_type in [
-        "BAPMC_Helicopter_Pilot",
-        "BAPMC_Pilot",
-        "BAPMC_Helicopter_Crew",
-        "BAPMC_Fixed_Wing_Crew"
+        "vsc_4RANGER_Helicopter_Pilot",
+        "vsc_4RANGER_Pilot",
+        "vsc_4RANGER_Helicopter_Crew",
+        "vsc_4RANGER_Fixed_Wing_Crew"
     ])
 );
 
 private _isVicCrew = (
     (_type in [
-        "BAPMC_Vic_Crew"
+        "vsc_4RANGER_Vic_Crew"
     ])
 );
 
 private _isMedic = (
     (_description in ["medic"]) ||
-    (_type in ["BAPMC_Medic"]) ||
+    (_type in ["vsc_4RANGER_Medic"]) ||
     (_player getUnitTrait "Medic") ||
     (_medicClass == 1)
 );
 
 private _isSurgeon = (
     (_description in ["Surgeon"]) ||
-    (_type in ["BAPMC_Surgeon"]) ||
+    (_type in ["vsc_4RANGER_Surgeon"]) ||
     (_player getUnitTrait "Doctor") ||
     (_medicClass == 2)
 );
@@ -78,7 +80,12 @@ private _ICAllowList = parseSimpleArray VS_core_arsenal_allowlist_IC;
 private _surgicalAllowlist = _SurgeonList + _MedicAllowList;
 private _pilotAllowList = _ICAllowList + _pilotList;
 private _vicCrewAllowList = _ICAllowList + _vicCrewList;
-private _generalBlacklist = _pilotAllowList + _vicCrewList + _surgicalAllowlist;
+private _WoodlandAllowlist = parseSimpleArray VS_core_camo_whitelist_woodland;
+private _ArcticAllowlist = parseSimpleArray VS_core_camo_whitelist_arctic;
+private _DesertAllowlist = parseSimpleArray VS_core_camo_whitelist_desert;
+private _MulticamAllowlist = parseSimpleArray VS_core_camo_whitelist_multicam;
+private _allAllowlist = _WoodlandAllowlist + _ArcticAllowlist + _DesertAllowlist + _MulticamAllowlist;
+private _generalBlacklist = _pilotAllowList + _vicCrewList + _surgicalAllowlist + _allAllowlist;
 
 // Get the player's name in lowercase and split by the first period (.)
 private _playerName = toLower name _player;
@@ -97,9 +104,17 @@ diag_log format ["[vs_core_fnc_limitArsenal] Player rank detected as: %1", _play
 // Initialize blacklist for this player
 private _blacklistedItems = [];
 switch (_playerRank) do {
-    case "cdt": { _blacklistedItems = _blacklistCadet; };
     case "rct": { _blacklistedItems = _blacklistRecruit; };
     case "pvt": { _blacklistedItems = _blacklistPrivate; };
+};
+
+private _camoAllowlist = [];
+switch (_climate) do {
+    case "woodland": { _camoAllowlist = _WoodlandAllowlist; };
+    case "arctic": { _camoAllowlist = _ArcticAllowlist; };
+    case "desert": { _camoAllowlist = _DesertAllowlist; };
+    case "multicam": { _camoAllowlist = _MulticamAllowlist; };
+    case "all": { _camoAllowlist = _allAllowlist; };
 };
 
 // Log if no blacklist is found for the player's rank
@@ -111,33 +126,22 @@ private _masterBlacklist = _blacklistedItems + _generalBlacklist;
 
 // Proceed to limit the arsenal if blacklist is available
 if (hasInterface) then {
-    {
         if (!isNil { _x getVariable "ace_arsenal_virtualItems" }) then {
-            // 1. Apply Blacklist (Optimized)
-            [_x, _masterBlacklist, false] call ace_arsenal_fnc_removeVirtualItems;
+    // 1. Apply Blacklist to the specific box that was opened
+        [_x, _masterBlacklist, false] call ace_arsenal_fnc_removeVirtualItems;
 
-            // 2. Handle All Roles Hierarchically
-            if (_isPilot) then {
-                [_x, _pilotAllowList, false] call ace_arsenal_fnc_addVirtualItems;
-            } else {
-                if (_isVicCrew) then {
-                    [_x, _vicCrewAllowList, false] call ace_arsenal_fnc_addVirtualItems;
-                } else {
-                    if (_isIC) then {
-                        [_x, _ICAllowList, false] call ace_arsenal_fnc_addVirtualItems;
-                    } else {
-                        if (_isSurgeon) then {
-                            [_x, _surgicalAllowlist, false] call ace_arsenal_fnc_addVirtualItems;
-                        } else {
-                            if (_isMedic) then {
-                                [_x, _MedicAllowList, false] call ace_arsenal_fnc_addVirtualItems;
-                            };
-                        };
-                    };
-                };
+        // 2. Handle Role Allowlists
+        if (_isPilot) then { [_x, _pilotAllowList, false] call ace_arsenal_fnc_addVirtualItems; };
+        if (_isVicCrew) then { [_x, _vicCrewAllowList, false] call ace_arsenal_fnc_addVirtualItems; };
+        if (_isIC) then { [_x, _ICAllowList, false] call ace_arsenal_fnc_addVirtualItems; };
+        if (_isSurgeon) then { [_x, _surgicalAllowlist, false] call ace_arsenal_fnc_addVirtualItems; };
+        if (_isMedic) then { [_x, _MedicAllowList, false] call ace_arsenal_fnc_addVirtualItems; };
+
+        // 3. Handle Camo Allowlists
+        if !(_camoAllowlist isEqualTo []) then {
+            [_x, _camoAllowlist, false] call ace_arsenal_fnc_addVirtualItems;
             };
-        };
-    } forEach allMissionObjects "All";
+        } forEach allMissionObjects "All";
 } else {
     // If not on the client, log that this function is being run outside a client context
     diag_log "[vs_core_fnc_limitArsenal] Arsenal limitation attempted on a non-client machine.";

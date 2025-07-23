@@ -2,14 +2,14 @@ class CfgPatches
 {
     class VS_Markers
     {
-        name = "Black Aegis - Markers";
+        name = "4th Btn Ranger Regiment - Markers";
 		author = "Viking Studios";
 		authors[] = {"Amateur-god"};
 		url = "https://discord.gg/bkdGvUNFbb";
 		version = 1.0;
 		versionAr[] = {1,0,0,0};
 		versionStr = "v1.0.0";
-		units[] = {"VS_BA_Flag"};
+		units[] = {"VS_4RANGER"};
         weapons[]={};
 		magazines[] = {};
 		ammo[] = {};
@@ -21,16 +21,16 @@ class CfgMarkerClasses
 {
     class VS_MarkerClass
     {
-        displayName = "Black Aegis";
+        displayName = "4th Btn Ranger Regiment Markers";
     };
 };
 
 class CfgMarkers
 {
-    class VS_BA_Flag
+    class VS_4RANGER
     {
-        name = "Black Aegis - Logo";
-        icon = "x\VS_C\Markers\data\logos\bapmc.paa";
+        name = "4RANGER - Logo";
+        icon = "x\VS_C\Markers\data\logos\4ranger.paa";
         color[] = {1,1,1,1};
         size = 48;
         scope = 2;

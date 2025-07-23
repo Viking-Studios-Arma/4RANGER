@@ -36,7 +36,7 @@ private _availableFilters = [
 
 private _availableFilterNames = [
 	["Full", "Unlimited Arsenal!"],
-	["Standard", "All Camo Black Aegis - PMC equipment"],
+	["Standard", "All Weapons 4th Btn Ranger Regiment equipment"],
 	"Mission"
 ];
 
@@ -108,7 +108,6 @@ _dialogParameters = _dialogParameters + [["_hasSpectator", false]];
 	        [_x] remoteExec ["vs_core_fnc_limitArsenal", _x]; // Executes on each client's machine
 	    } forEach allPlayers;
 	};
-
 
 	if (_hasFullHeal) then {
 		[_objects] remoteExec ["vs_core_fnc_fullHeal", 2];

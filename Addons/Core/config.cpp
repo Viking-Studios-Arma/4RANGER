@@ -1,14 +1,14 @@
 class CfgPatches {
 	class VS_Core {
 		// Addon identity
-		name = "Black Aegis - PMC - Core";
+		name = "4th Btn Ranger Regiment - Core";
 		author = "Viking Studios";
 		authors[] = {"Amateur-god","Arend","2BNB"};
 		url = "https://discord.gg/bkdGvUNFbb";
 		version = 1.0;
 		versionAr[] = {1,0,0,0};
 		versionStr = "v1.0.0";
-		requiredAddons[] = {"A3_Modules_F","cba_settings","ace_arsenal","3DEN","BAPMC_Factions"};
+		requiredAddons[] = {"A3_Modules_F","cba_settings","ace_arsenal","3DEN","VSC_Factions"};
 		units[] = {};
 		weapons[] = {};
 		magazines[] = {};

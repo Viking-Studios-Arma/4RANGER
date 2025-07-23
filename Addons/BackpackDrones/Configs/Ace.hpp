@@ -29,11 +29,11 @@
                     exceptions[] = {"isNotOnMap","isNotInside", "isNotSwimming","isNotSitting"};
                     icon = ""; // icontodo
                     };
-                    class Mavik_3T_Unpack
+                    class Mavik_3X_Unpack
                     {
-                    displayName = "Deploy Mavik-3T";
-                    condition = """VS_C_Mavik_3T_Item"" in backpackItems _player";
-                    statement = "_player call VS_C_Drone_fnc_Mavik3T_Create";
+                    displayName = "Deploy Mavik-3X";
+                    condition = """VS_C_Mavik_3X_Item"" in backpackItems _player";
+                    statement = "_player call VS_C_Drone_fnc_Mavik3X_Create";
                     exceptions[] = {"isNotOnMap","isNotInside", "isNotSwimming","isNotSitting"};
                     icon = ""; // icontodo
                     };

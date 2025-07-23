@@ -1,64 +1,76 @@
-    class BAPMC_Cars_Unarmed
+    class VSC_Cars_Unarmed
   {
     displayName="Cars (Unarmed)";
   };
-    class BAPMC_Cars_Armed
+    class VSC_Cars_Armed
   {
     displayName="Cars (Armed)";
   };
-    class BAPMC_Cars_Armed_Des
+    class VSC_Cars_Armed_Des
   {
     displayName="Desert Cars (Armed)";
   };
-    class BAPMC_Cars_Unarmed_Des
+    class VSC_Cars_Unarmed_Des
   {
     displayName="Desert Cars (Unarmed)";
   };
-    class BAPMC_Cars_Armed_Wdl
+    class VSC_Cars_Armed_Wdl
   {
     displayName="Woodland Cars (Armed)";
   };
-    class BAPMC_Cars_Unarmed_Wdl
+    class VSC_Cars_Unarmed_Wdl
   {
     displayName="Woodland Cars (Unarmed)";
   };
-    class BAPMC_Vans
+    class VSC_Vans
   {
     displayName="Vans";
   };
-    class BAPMC_Trucks
+    class VSC_Trucks
   {
     displayName="Trucks";
   };
-    class BAPMC_Planes
+    class VSC_Planes
   {
     displayName="Planes";
   };
-    class BAPMC_Jets
+    class VSC_Jets
   {
     displayName="Jets";
   };
-    class BAPMC_Helicopters
+    class VSC_Helicopters
   {
     displayName="Helicopters";
   };
-    class BAPMC_Men
+    class VSC_Men_MC
   {
-    displayName="Men";
+    displayName="Men (Multicam)";
   };
-  class BAPMC_Drones
+  class VSC_Men_WDL
+  {
+    displayname="Men (Woodland)";
+  };
+  class VSC_Men_Des
+  {
+    displayname="Men (Desert)";
+  };
+  class VSC_Men_Artic
+  {
+    displayname="Men (Arctic)";
+  };
+  class VSC_Drones
   {
     displayName="Drones";
   };
-  class BAPMC_Airbase_Support
+  class VSC_Airbase_Support
   {
     displayName="Airbase Support";
   };
-  class BAPMC_Air_Defence
+  class VSC_Air_Defence
   {
     displayName="Air Defence";
   };
-  class BAPMC_Naval
+  class VSC_Naval
   {
     displayName="Naval";
   };

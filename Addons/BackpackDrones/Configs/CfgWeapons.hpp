@@ -77,11 +77,11 @@ class CfgWeapons
 			type = 620;
 		};
 	};
-	class VS_C_Mavik_3T_Item: ItemCore
+	class VS_C_Mavik_3X_Item: ItemCore
 	{
 		author = "Amateur_God";
-		displayName = "Deployable Mavik-3T";
-		descriptionShort = "Inventory item<br/>allows you to deploy Mavik-3T";
+		displayName = "Deployable Mavik-3X";
+		descriptionShort = "Inventory item<br/>allows you to deploy Mavik-3X";
 		picture = "\A3\Drones_F\Air_F_Gamma\UAV_01\Data\UI\UAV_01_CA.paa";
         model = "\A3\Weapons_F\Items\Toolkit.p3d";
 		scope = 2;

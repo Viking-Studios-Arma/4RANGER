@@ -21,10 +21,10 @@ params ["_unit"];
 
         _unit removeItemFromBackpack "VS_C_Mavik_3_Item";
         private _vehicleClass = switch (_playerSide) do {
-            case west: {"mavik_3_OPF"};
-            case east: {"mavik_3_BLU"};
-            case independent: {"BAPMC_mavik_3"};
-            default {"BAPMC_mavik_3_Civ"};
+            case west: {"mavik_3_BLU"};
+            case east: {"mavik_3_OPF"};
+            case independent: {"mavik_3_IND"};
+            default {"mavik_3_CIV"};
         };
 
         _uavPos = _unit modelToWorld [0, 2, 0];

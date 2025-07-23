@@ -1,7 +1,7 @@
 class CfgPatches {
-	class BAPMC_Factions {
+	class VSC_Factions {
 		// Addon identity
-		name = "Black Aegis - PMC - Factions";
+		name = "4 RANGER - Factions";
 		author = "Viking Studios";
 		authors[] = {"Amateur-god"};
 		url = "https://discord.gg/bkdGvUNFbb";
@@ -17,8 +17,6 @@ class CfgPatches {
       "cba_settings",
       "ace_arsenal",
       "3DEN",
-      "USAF_AC130U_C",
-      "DEGA_Vehicles_Suv",
       "ace_common",
       "ace_interact_menu",
       "ace_interaction",
@@ -37,121 +35,103 @@ class CfgPatches {
       "ace_huntir",
       "ace_explosives",
       "A3_Weapons_F_Items",
-      "DEGA_Vehicles_Suv"
     };
     units[] = {
-      "BAPMC_Transport_Truck",
-      "BAPMC_Repair_Truck",
-      "BAPMC_Mover_Truck",
-      "BAPMC_Medical_Truck",
-      "BAPMC_Fuel_Truck",
-      "BAPMC_Container_Truck",
-      "BAPMC_Ammo_truck",
-      "BAPMC_Comms_Offroad",
-      "BAPMC_Offroad_New",
-      "BAPMC_DAR_M1151WoodlandUA",
-      "BAPMC_DAR_M1152Woodland",
-      "BAPMC_UK3CB_BAF_Panther_GPMG_Green_A",
-      "BAPMC_DAR_M1167Woodland",
-      "BAPMC_DAR_M115_MK19Woodland",
-      "BAPMC_DAR_M1151Woodland",
-      "BAPMC_UK3CB_BAF_LandRover_WMIK_Milan_FFR_Green_B",
-      "BAPMC_UK3CB_BAF_LandRover_WMIK_HMG_FFR_Green_B",
-      "BAPMC_UK3CB_BAF_LandRover_WMIK_GPMG_FFR_Green_B",
-      "BAPMC_UK3CB_BAF_LandRover_WMIK_GMG_FFR_Green_B",
-      "BAPMC_UK3CB_BAF_Jackal2_L111A1_W",
-      "BAPMC_UK3CB_BAF_Husky_Passenger_HMG_Green",
-      "BAPMC_UK3CB_BAF_Husky_Passenger_GPMG_Green",
-      "BAPMC_UK3CB_BAF_Husky_Passenger_GMG_Green",
-      "BAPMV_DAR_M1152",
-      "BAPMC_DAR_M1151",
-      "BAPMC_DAR_M1151_Deploy",
-      "BAPMC_DAR_M115_MK19",
-      "BAPMC_DAR_M1165_GMV",
-      "BAPMC_DAR_M1167",
-      "BAPMC_UK3CB_BAF_Panther_GPMG_Sand_A",
-      "BAPMC_UK3CB_BAF_LandRover_WMIK_Milan_FFR_Sand_A",
-      "BAPMC_UK3CB_BAF_LandRover_WMIK_HMG_FFR_Sand_A",
-      "BAPMC_UK3CB_BAF_LandRover_WMIK_GPMG_FFR_Sand_A",
-      "BAPMC_UK3CB_BAF_LandRover_WMIK_GMG_FFR_Sand_A",
-      "BAPMC_UK3CB_BAF_Jackal2_L111A1_D",
-      "BAPMC_UK3CB_BAF_Husky_Passenger_HMG_Sand",
-      "BAPMC_UK3CB_BAF_Husky_Passenger_GPMG_Sand",
-      "BAPMC_UK3CB_BAF_Husky_Passenger_GMG_Sand",
-      "BAPMC_C130J_Cargo_ViV",
-      "BAPMC_C130J_Transport",
-      "BAPMC_AC130U",
-      "BAPMC_KC135",
-      "BAPMC_Wildcat",
-      "BAPMC_Wildcat_AT",
-      "BAPMC_Wildcat_Armed",
-      "BAPMC_AH6M_Littlebird",
-      "BAPMC_MH6M_Littlebird",
-      "BAPMC_HH60GM",
-      "BAPMC_MH60M",
-      "BAPMC_UH60M_Medevac",
-      "BAPMC_UH60M_Slick",
-      "BAPMC_MH60M_DAP_MLASS",
-      "BAPMC_MH60M_DAP",
-      "BAPMC_AH64D_B1",
-      "BAPMC_BAF_Merlin_HC4_18_GPMG",
-      "BAPMC_BAF_Merlin_HC4_24",
-      "BAPMC_BAF_Merlin_HC4_32",
-      "BAPMC_BAF_Merlin_HC4_CSAR",
-      "BAPMC_BAF_Merlin_HC4_18",
-      "BAPMC_AH1_Apache",
-      "BAPMC_Chinook",
-      "BAPMC_IC",
-      "BAPMC_Surgeon",
-      "BAPMC_Medic",
-      "BAPMC_Rifleman",
-      "BAPMC_Cadet",
-      "BAPMC_Helicopter_Pilot",
-      "BAPMC_Pilot",
-      "BAPMC_Fixed_Wing_Crew",
-      "BAPMC_Helicopter_Crew",
-      "BAPMC_Vic_Crew",
-      "BAPMC_Factions",
-      "BAPMC_Cars_Unarmed",
-      "BAPMC_Cars_Armed",
-      "BAPMC_Cars_Armed_Des",
-      "BAPMC_Cars_Unarmed_Des",
-      "BAPMC_Cars_Armed_Wdl",
-      "BAPMC_Cars_Unarmed_Wdl",
-      "BAPMC_Vans",
-      "BAPMC_Trucks",
-      "BAPMC_Planes",
-      "BAPMC_Jets",
-      "BAPMC_Men",
-      "VS_C_BAPMC",
-      "BAPMC_helicopters",
-      "BAPMC_GunArmoredSUV",
-      "BAPMC_ArmoredSUV",
-      "BAPMC_Mavik_Base",
-      "BAPMC_mavik_3",
-      "BAPMC_mavik_3T",
-      "BAPMC_MQ9",
-      "BAPMC_Mavik3T_Base",
-      "BAPMC_foxhound_lppv_tes",
-      "BAPMC_lcvpmk5_viv",
-      "BAPMC_lcvpmk5_1",
-      "BAPMC_Static_Rapier_FSC_Launcher",
-      "BAPMC_Static_Rapier_FSC_Blindfire",
-      "BAPMC_Static_Rapier_FSC_Dagger",
-      "BAPMC_F_35C",
-      "BAPMC_F_35C_S",
-      "BAPMC_aircraft_tug",
-      "BAPMC_Kitbag",
-      "BAPMC_IC_pack",
-      "BAPMC_Surgeon_pack",
-      "BAPMC_Medic_pack",
-      "BAPMC_Rifleman_pack",
-      "BAPMC_Cadet_pack",
-      "BAPMC_Helicopter_Pilot_pack",
-      "BAPMC_Pilot_pack",
-      "BAPMC_Fixed_Wing_Crew_pack",
-      "BAPMC_Helicopter_Crew_pack",
-      "BAPMC_Vic_Crew_pack"
+      "VSC_Transport_Truck",
+      "VSC_Repair_Truck",
+      "VSC_Mover_Truck",
+      "VSC_Medical_Truck",
+      "VSC_Fuel_Truck",
+      "VSC_Container_Truck",
+      "VSC_Ammo_truck",
+      "VSC_Comms_Offroad",
+      "VSC_Offroad_New",
+      "VSC_UK3CB_BAF_LandRover_WMIK_Milan_FFR_Green_B",
+      "VSC_UK3CB_BAF_LandRover_WMIK_HMG_FFR_Green_B",
+      "VSC_UK3CB_BAF_LandRover_WMIK_GPMG_FFR_Green_B",
+      "VSC_UK3CB_BAF_LandRover_WMIK_GMG_FFR_Green_B",
+      "VSC_UK3CB_BAF_Jackal2_L111A1_W",
+      "VSC_UK3CB_BAF_Husky_Passenger_HMG_Green",
+      "VSC_UK3CB_BAF_Husky_Passenger_GPMG_Green",
+      "VSC_UK3CB_BAF_Husky_Passenger_GMG_Green",
+      "VSC_UK3CB_BAF_Panther_GPMG_Sand_A",
+      "VSC_UK3CB_BAF_LandRover_WMIK_Milan_FFR_Sand_A",
+      "VSC_UK3CB_BAF_LandRover_WMIK_HMG_FFR_Sand_A",
+      "VSC_UK3CB_BAF_LandRover_WMIK_GPMG_FFR_Sand_A",
+      "VSC_UK3CB_BAF_LandRover_WMIK_GMG_FFR_Sand_A",
+      "VSC_UK3CB_BAF_Jackal2_L111A1_D",
+      "VSC_UK3CB_BAF_Husky_Passenger_HMG_Sand",
+      "VSC_UK3CB_BAF_Husky_Passenger_GPMG_Sand",
+      "VSC_UK3CB_BAF_Husky_Passenger_GMG_Sand",
+      "VSC_Wildcat",
+      "VSC_Wildcat_AT",
+      "VSC_Wildcat_Armed",
+      "VSC_AH6M_Littlebird",
+      "VSC_MH6M_Littlebird",
+      "VSC_HH60GM",
+      "VSC_MH60M",
+      "VSC_UH60M_Medevac",
+      "VSC_UH60M_Slick",
+      "VSC_MH60M_DAP_MLASS",
+      "VSC_MH60M_DAP",
+      "VSC_AH64D_B1",
+      "VSC_BAF_Merlin_HC4_18_GPMG",
+      "VSC_BAF_Merlin_HC4_24",
+      "VSC_BAF_Merlin_HC4_32",
+      "VSC_BAF_Merlin_HC4_CSAR",
+      "VSC_BAF_Merlin_HC4_18",
+      "VSC_AH1_Apache",
+      "VSC_Chinook",
+      "VSC_IC",
+      "VSC_Surgeon",
+      "VSC_Medic",
+      "VSC_Rifleman",
+      "VSC_Cadet",
+      "VSC_Helicopter_Pilot",
+      "VSC_Pilot",
+      "VSC_Fixed_Wing_Crew",
+      "VSC_Helicopter_Crew",
+      "VSC_Vic_Crew",
+      "VSC_Cars_Unarmed",
+      "VSC_Cars_Armed",
+      "VSC_Cars_Armed_Des",
+      "VSC_Cars_Unarmed_Des",
+      "VSC_Cars_Armed_Wdl",
+      "VSC_Cars_Unarmed_Wdl",
+      "VSC_Vans",
+      "VSC_Trucks",
+      "VSC_Planes",
+      "VSC_Jets",
+      "VSC_Men",
+      "VS_C_4RANGER",
+      "VSC_helicopters",
+      "VSC_GunArmoredSUV",
+      "VSC_ArmoredSUV",
+      "VSC_Mavik_Base",
+      "VSC_mavik_3",
+      "VSC_mavik_3T",
+      "VSC_MQ9",
+      "VSC_Mavik3T_Base",
+      "VSC_foxhound_lppv_tes",
+      "VSC_lcvpmk5_viv",
+      "VSC_lcvpmk5_1",
+      "VSC_Static_Rapier_FSC_Launcher",
+      "VSC_Static_Rapier_FSC_Blindfire",
+      "VSC_Static_Rapier_FSC_Dagger",
+      "VSC_F_35C",
+      "VSC_F_35C_S",
+      "VSC_aircraft_tug",
+      "VSC_Kitbag",
+      "VSC_IC_pack",
+      "VSC_Surgeon_pack",
+      "VSC_Medic_pack",
+      "VSC_Rifleman_pack",
+      "VSC_Cadet_pack",
+      "VSC_Helicopter_Pilot_pack",
+      "VSC_Pilot_pack",
+      "VSC_Fixed_Wing_Crew_pack",
+      "VSC_Helicopter_Crew_pack",
+      "VSC_Vic_Crew_pack"
     };
     weapons[]={};
 		magazines[] = {};
@@ -163,21 +143,21 @@ class CfgPatches {
 
 class cfgFactionClasses
 {
-  class VS_C_BAPMC
+  class VS_C_4RANGER
   {
-    icon="x\VS_C\Core\images\bapmc.paa";
-    displayName="Black Aegis - PMC";
-    side=2;
+    icon="x\VS_C\Core\images\4RANGER.paa";
+    displayName="4th Btn Ranger Regiment";
+    side=1;
     priority=1;
   };
 };
 class CfgEditorCategories
 {
-  class VS_C_BAPMC
+  class VS_C_4RANGER
   {
-    icon="x\VS_C\Core\images\bapmc.paa";
-    displayName="Black Aegis - PMC";
-    side=2;
+    icon="x\VS_C\Core\images\4RANGER.paa";
+    displayName="4th Btn Ranger Regiment";
+    side=1;
     priority=1;
   };
 };
@@ -188,9 +168,9 @@ class CfgEditorSubcategories
 
 class CfgVehicleClasses
 {
-	class BAPMC_helicopters
+	class VSC_helicopters
 	{
-		displayname="Black Aegis - PMC Helicopters";
+		displayname="4th Btn Ranger Regiment Helicopters";
 	};
 };
 
@@ -213,9 +193,28 @@ class DefaultVehicleSystemsDisplayManagerRight
 };
 
 class cfgVehicles {
+	class CAManBase;
+	class CAManBase: CAManBase {
+		class EventHandlers : EventHandlers {
+			class VSC_Optics {
+				init = "
+					if (local (_this select 0)) then {
+						_onSpawn = {
+							_this = _this select 0;
+							_weaponItems = (configfile >> 'cfgvehicles' >> (typeof _this) >> 'vsc_weaponItems') call BIS_fnc_getCfgDataArray;
+							sleep 0.2;
+							{
+								_this addPrimaryWeaponItem _x;
+							} foreach _weaponItems;
+						};
+						[(_this select 0)] spawn _onSpawn;
+					};";
+			};
+		};
+	};
     #include "parents\parents.hpp"
-    #include "Infantry\Black\men.hpp"
-    #include "Infantry\Black\backpacks.hpp"
+    #include "Infantry\mc\men.hpp"
+    #include "Infantry\mc\backpacks.hpp"
     #include "vehicles\Air\helis.hpp"
     #include "vehicles\Air\planes.hpp"
     #include "vehicles\Air\jets.hpp"
@@ -230,15 +229,4 @@ class cfgVehicles {
     #include "vehicles\ground\trucks.hpp"
     #include "vehicles\ground\statics\aa.hpp"
     #include "vehicles\sea\landingCraft.hpp"
-};
-
-class CfgFunctions {
-    class USAF_AC130_AP_GS {
-         class general {
-              class movePilot
-              {
-                file = "x\VS_C\Factions\functions\fn_movePilot.sqf";
-              };
-         };
-     };
 };
