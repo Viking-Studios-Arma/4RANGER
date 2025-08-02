@@ -28,7 +28,7 @@ if (isNull _player) exitWith {
 private _climate = missionNamespace getVariable [format["vs_core_climate_%1", worldName], "all"];
 
 private _WoodlandAllowlist = parseSimpleArray VS_core_camo_whitelist_woodland;
-private _ArcticAllowlist = parseSimpleArray VS_core_camo_whitelist_arctic;
+private _ArcticAllowlist = parseSimpleArray VS_core_camo_whitelist_Artic;
 private _DesertAllowlist = parseSimpleArray VS_core_camo_whitelist_desert;
 private _MulticamAllowlist = parseSimpleArray VS_core_camo_whitelist_multicam;
 private _allAllowlist = _WoodlandAllowlist + _ArcticAllowlist + _DesertAllowlist + _MulticamAllowlist;
