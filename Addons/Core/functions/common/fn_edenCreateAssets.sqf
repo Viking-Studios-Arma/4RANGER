@@ -14,45 +14,56 @@
     6: _jets - Number of jets to spawn <Number>
     7: _gunships - Number of gunships to spawn <Number>
     8: _planes - Number of planes to spawn <Number>
-    9: _createDefaults - Whether to create a section to use as default loadout units <Bool>
 
     Returns:
     Nothing.
 
     Examples:
-    ["Odin", "Valhalla", "BLACK", 3, 2, 2, 1, 1, 1, true] call vs_core_fnc_edenCreateAssets;
+    ["Odin", "Valhalla", "Multicam", 3, 2, 2, 1, 1, 1] call vs_core_fnc_edenCreateAssets;
 
     Author:
     Met & Amateur-God
 License GPL-2.0
 ---------------------------------------------------------------------------- */
 params [
-    ["_callsign", "Shield", [""]],
-    ["_zeusCallsign", "Olympus", [""]],
-    ["_camo", "BLACK", [""]],
+    ["_zeusCallsign", "Zero", [""]],
+    ["_camo", "MultiCam", [""]],
     ["_numberOfSections", 3, [0]],
     ["_ifvCrew", 0, [0]],
     ["_tankCrew", 0, [0]],
     ["_helicopters", 0, [0]],
     ["_jets", 0, [0]],
     ["_gunships", 0, [0]],
-    ["_planes", 0, [0]],
-    ["_createDefaults", false, [false]]
+    ["_planes", 0, [0]]
 ];
 
-if (_callsign == "") then {
-    _callsign = "Shield";
-};
+private _phoneticAlphabet = [
+    "Alpha", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Golf", "Hotel",
+    "India", "Juliett", "Kilo", "Lima", "Mike", "November", "Oscar", "Papa",
+    "Quebec", "Romeo", "Sierra", "Tango", "Uniform", "Victor", "Whiskey",
+    "X-Ray", "Yankee", "Zulu"
+];
+
+private _callsign = selectRandom _phoneticAlphabet;
 
 if (_zeusCallsign == "") then {
-    _zeusCallsign = "Olympus";
+    _zeusCallsign = "Zero";
 };
 
 if (_camo == "") then {
-    _camo = "BLACK";
+    _camo = "MultiCam";
 };
 
-_camo = toUpper _camo;
+_ArsenalCamo = _camo;
+
+switch (_camo) do {
+	case "Multicam": {_camo = "Multicam"};
+	case "Desert": {_camo = "Desert"};
+	case "Woodland": {_camo = "Woodland"};
+	case "Winter": {_camo = "Winter"};
+	default {_camo = "Multicam" };
+};
+
 _nameZeus = format ["%1_zeus", _camo];
 _nameSection = format ["%1_section", _camo];
 _nameCommand = format ["%1_command", _camo];
@@ -111,7 +122,7 @@ _entities =
 		["name", "HC3"]
 	],
 	[
-		["Object", "I_supplyCrate_F", _spawnPos vectorAdd [-3, 6]],
+		["Object", "VSC_supplyCrate_F", _spawnPos vectorAdd [-3, 6]],
 		["allowDamage", false],
 		["ArsenalObject", true]
 	],
@@ -121,7 +132,7 @@ _entities =
 		["ArsenalObject", true]
 	],
 	[
-		["Object", "I_supplyCrate_F", _spawnPos vectorAdd [-5, 6]],
+		["Object", "VSC_supplyCrate_F", _spawnPos vectorAdd [-5, 6]],
 		["allowDamage", false],
 		["ArsenalObject", true]
 	]
@@ -130,14 +141,14 @@ _entities =
 _sections =
 [
 	[
-		[configfile >> "CfgGroups" >> "Independent" >> "vs_core_compositions" >> "infantry" >> _nameCommand, _spawnPos vectorAdd [0, 0]],
+		[configfile >> "CfgGroups" >> "West" >> "vs_core_compositions" >> "infantry" >> _nameCommand, _spawnPos vectorAdd [0, 0]],
 		"Command",
-		["description", format ["1: 1IC@%1 1-Actual", _callsign ]]
+        ["description", format ["1: %1 Platoon Command", ((_callsign select [0, 1]) + "10")]]
 	],
 	[
-		[configfile >> "CfgGroups" >> "Independent" >> "vs_core_compositions" >> "infantry" >> _nameZeus, _spawnPos vectorAdd [1, 2]],
+		[configfile >> "CfgGroups" >> "West" >> "vs_core_compositions" >> "infantry" >> _nameZeus, _spawnPos vectorAdd [1, 2]],
 		"Zeus",
-		["description", format ["1: Zeus@%1", _zeusCallsign]]
+		["description", format ["1: %1", _zeusCallsign]]
 	]
 ];
 
@@ -158,14 +169,14 @@ _last = "";
 // The main sections
 _num = 1;
 for "_i" from 1 to _numberOfSections do {
-	create3DENComposition [configfile >> "CfgGroups" >> "Independent" >> "vs_core_compositions" >> "infantry" >> _nameSection, _spawnPos vectorAdd [_num, 0, 0]];
-	set3DENAttributes [[get3DENSelected "Group", "groupID", format ["Shield %1", _i]], [get3DENSelected "Object", "ControlMP", true]];
+	create3DENComposition [configfile >> "CfgGroups" >> "West" >> "vs_core_compositions" >> "infantry" >> _nameSection, _spawnPos vectorAdd [_num, 0, 0]];
+	set3DENAttributes [[get3DENSelected "Group", "groupID", ((_callsign select [0, 1]) + "1" + str _i + "0")], [get3DENSelected "Object", "ControlMP", true]];
 	_group = get3DENselected "Object" select 0;
 	_ix = 1;
 	{
 		_unitDisplayName = getText (configOf _x >> "displayName");
 		if (_unitDisplayName == "IC" && !isFormationLeader _x) then {
-			_x set3DENAttribute ["description", format ["%1: Team Leader", _ix]];
+			_x set3DENAttribute ["description", format ["%1: %2 Section 2IC", _ix, ((_callsign select [0, 1]) + "1" + str _i + "9")]];
 		} else {
 			if (_x getUnitTrait "Medic") then {
 				_x set3DENAttribute ["description", format ["%1: Combat Medic", _ix]];
@@ -180,7 +191,7 @@ for "_i" from 1 to _numberOfSections do {
 		};
     _ix = _ix + 1;
 	} forEach units _group;
-	leader _group set3DENAttribute ["description", format ["1: Section Leader@%1 %2", _callsign, _i]];
+	leader _group set3DENAttribute ["description", format ["1: %1 Section IC", ((_callsign select [0, 1]) + "1" + str _i + "0")]];
 	set3DENSelected [];
 	_num = _num + 2;
 };
@@ -191,25 +202,27 @@ for "_i" from 1 to _numberOfSections do {
 	_attributeOne = _x select 1;
 	_attributeTwo = _x select 2;
 	create3DENComposition _configPath;
-	set3DENAttributes [[get3DENSelected "Group", "groupID", _attributeOne], [get3DENSelected "Object", "ControlMP", true]];
 	_groupComp = get3DENSelected "Object";
 	_group = _groupComp select 0;
 	if ((_attributeOne) == "Zeus") then {
+        set3DENAttributes [[get3DENSelected "Group", "groupID", _zeusCallsign], [get3DENSelected "Object", "ControlMP", true]];
 		leader _group set3DENAttribute ["name", "zeusOne"];
+  		leader _group set3DENAttribute ["description", format ["1: %1", _zeusCallsign]];
 		_asZeus = _groupComp select 1;
-		_asZeus set3DENAttribute ["description", "2: A.Zeus"];
+		_asZeus set3DENAttribute ["description", format ["2: %1 Alpha", _zeusCallsign]];
 		_asZeus set3DENAttribute ["name", "zeusTwo"];
 	} else {
+        set3DENAttributes [[get3DENSelected "Group", "groupID", ((_callsign select [0, 1]) + "10")], [get3DENSelected "Object", "ControlMP", true]];
 		{
 			_unitDisplayName = getText (configOf _x >> "displayName");
 			if (_unitDisplayName == "IC" && !isFormationLeader _x) then {
-				_x set3DENAttribute ["description", "2: 2IC"];
+				_x set3DENAttribute ["description", format ["2: %1 Platoon Sergeant", ((_callsign select [0, 1]) + "19")]];
 			} else {
 				if (_x getUnitTrait "Medic") then {
 					_x set3DENAttribute ["description", "3: Surgeon"];
 					_x set3DENAttribute ["init", "this setVariable ['ace_medical_medicClass', 2, true];"];
 				} else {
-					_x set3DENAttribute ["description", "4: Specialist"];
+					_x set3DENAttribute ["description", "4: Rifleman"];
 				};
 			};
 		} forEach units _group;
@@ -220,7 +233,7 @@ for "_i" from 1 to _numberOfSections do {
 
 {
 	private _unitDisplayName = getText (configOf _x >> "displayName");
-	if (_unitDisplayName == "Surgeon" || typeOf _x == "BAPMC_Surgeon")
+	if (_unitDisplayName == "Surgeon" || typeOf _x == "VSC_4RANGER_MC_Surgeon")
 	    then {
 			_x set3DENAttribute ["init", "this setVariable ['ace_medical_medicClass', 2, true];"];
 		};
@@ -405,22 +418,10 @@ for "_i" from 1 to _jets do {
     _numJet = _numJet + 2;
 };
 
-// Default Loadouts
-if (_createDefaults) then {
-    create3DENComposition [configfile >> "CfgGroups" >> "Independent" >> "vs_core_compositions" >> "infantry" >> _nameDefaults, _spawnPos vectorAdd [_numJet + 2, 3, 0]];
-    set3DENAttributes [[get3DENSelected "Group", "groupID", "Default Loadouts"], [get3DENSelected "Object", "vs_cORE_3den_Loadout", true]];
-    _groupComp = get3DENSelected "Object";
-    {
-        _unitDisplayName = getText (configOf _x >> "displayName");
-        _x set3DENAttribute ["vs_cORE_3den_LoadoutName", _unitDisplayName];
-    } forEach _groupComp;
-    set3DENSelected [];
-};
-
 // Adjust medic class for surgeons
 {
     private _unitDisplayName = getText (configOf _x >> "displayName");
-    if (_unitDisplayName == "Surgeon" || typeOf _x == "BAPMC_Surgeon") then {
+    if (_unitDisplayName == "Surgeon" || typeOf _x == "VSC_4RANGER_MC_Surgeon") then {
         _x set3DENAttribute ["init", "this setVariable ['ace_medical_medicClass', 2, true];"];
     };
 } forEach allUnits;

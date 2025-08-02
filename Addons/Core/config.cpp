@@ -33,7 +33,6 @@ class CfgFunctions {
 			class isCurator {};
 			class listDeadPlayers {};
 			class notifyZeus {};
-			class setDefaultLoadouts {};
 			class openTimerUI {};
 			class setRespawnTimer {};
 			class getArsenalFilter {};
@@ -83,7 +82,6 @@ class Extended_PostInit_EventHandlers {
 #include "configs\CfgDefines.hpp"
 #include "configs\CfgDirectConnect.hpp"
 #include "configs\CfgEdenGUI.hpp"
-#include "configs\CfgEdenLoadouts.hpp"
 #include "configs\CfgEdenModules.hpp"
 #include "configs\CfgEdenTools.hpp"
 #include "configs\CfgEnableDebug.hpp"

@@ -1,15 +1,13 @@
 /*License GPL-2.0*/
-#define MULTICAM_ASTEAMLEADER "vsc_4RANGER_IC"
-#define MULTICAM_TEAMLEADER "vsc_4RANGER_IC"
-#define MULTICAM_MEDIC "vsc_4RANGER_Medic"
-#define MULTICAM_RIFLEMAN "vsc_4RANGER_Rifleman"
-#define MULTICAM_SURGEON "vsc_4RANGER_Surgeon"
-#define MULTICAM_RECRUIT "vsc_4RANGER_Recruit"
-#define MULTICAM_PILOT "vsc_4RANGER_Pilot"
-#define MULTICAM_HELIPILOT "vsc_4RANGER_Helicopter_Pilot"
-#define MULTICAM_FWCREW "vsc_4RANGER_Fixed_Wing_Crew"
-#define MULTICAM_HELICREW "vsc_4RANGER_Helicopter_Crew"
-#define MULTICAM_VICCREW "vsc_4RANGER_Vic_Crew"
+#define MULTICAM_ASTEAMLEADER "VSC_4RANGER_MC_2IC"
+#define MULTICAM_TEAMLEADER "VSC_4RANGER_MC_IC"
+#define MULTICAM_PLATOONLEADER "VSC_4RANGER_MC_PLIC"
+#define MULTICAM_PLATOONASLEADER "VSC_4RANGER_MC_PL2IC"
+#define MULTICAM_MEDIC "VSC_4RANGER_MC_Medic"
+#define MULTICAM_RIFLEMAN "VSC_4RANGER_MC_Rifleman"
+#define MULTICAM_SURGEON "VSC_4RANGER_MC_Surgeon"
+#define HELIPILOT "VSC_4RANGER_Helicopter_Pilot"
+#define HELICREW "VSC_4RANGER_Helicopter_Crew"
 
 /*
 #define PACIFIC_ASTEAMLEADER "B_T_Soldier_SL_F"
@@ -52,33 +50,33 @@ class display3DEN
 };
 class CfgGroups
 {
-	class independent {
+	class West {
 		class VS_Core_compositions {
 			name = "VS";
 			scope = 0;
 			class infantry {
 				name = "";
-				class MULTICAM_zeus {
+				class MultiCam_zeus {
 					name = "";
 					scope = 0;
 					faction = "VS_C_4RANGER";
-					side = 2;
+					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = MULTICAM_ASTEAMLEADER;
+						vehicle = MULTICAM_PLATOONLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit1 {
 						position[] = {1,0,0};
-						vehicle = MULTICAM_ASTEAMLEADER;
+						vehicle = MULTICAM_PLATOONLEADER;
 						rank = "PRIVATE";
 					};
 				};
-				class MULTICAM_section {
+				class MultiCam_section {
 					name = "";
 					scope = 0;
 					faction = "VS_C_4RANGER";
-					side = 2;
+					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = MULTICAM_TEAMLEADER;
@@ -106,7 +104,7 @@ class CfgGroups
 					};
 					class Unit5 {
 						position[] = {1,-3,0};
-						vehicle = MULTICAM_MEDIC;
+						vehicle = MULTICAM_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 					class Unit6 {
@@ -116,24 +114,24 @@ class CfgGroups
 					};
 					class Unit7 {
 						position[] = {1,-9,0};
-						vehicle = MULTICAM_CADET;
+						vehicle = MULTICAM_RIFLEMAN;
 						rank = "PRIVATE";
 					};
 
 				};
-				class MULTICAM_command {
+				class MultiCam_command {
 					name = "";
 					scope = 0;
 					faction = "VS_C_4RANGER";
-					side = 2;
+					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = MULTICAM_TEAMLEADER;
+						vehicle = MULTICAM_PLATOONLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit1 {
 						position[] = {0,-3,0};
-						vehicle = MULTICAM_ASTEAMLEADER;
+						vehicle = MULTICAM_PLATOONASLEADER;
 						rank = "PRIVATE";
 					};
 					class Unit2{
@@ -147,154 +145,98 @@ class CfgGroups
 						rank = "PRIVATE";
 					};
 				};
-				class MULTICAM_Helicopter {
+				class MultiCam_Helicopter {
 					name = "";
 					scope = 0;
 					faction = "VS_C_4RANGER";
-					side = 2;
+					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = MULTICAM_HELIPILOT;
+						vehicle = HELIPILOT;
 						rank = "PRIVATE";
 					};
 					class Unit1 {
 						position[] = {0,-3,0};
-						vehicle = MULTICAM_HELICREW;
+						vehicle = HELICREW;
 						rank = "PRIVATE";
 					};
 					class Unit2{
 						position[] = {0,-6,0};
-						vehicle = MULTICAM_HELICREW;
+						vehicle = HELICREW;
 						rank = "PRIVATE";
 					};
 				};
-				class MULTICAM_JET {
+				class MultiCam_JET {
 					name = "";
 					scope = 0;
 					faction = "VS_C_4RANGER";
-					side = 2;
+					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = MULTICAM_PILOT;
+						vehicle = HELIPILOT;
 						rank = "PRIVATE";
 					};
 				};
-				class MULTICAM_PLANE {
+				class MultiCam_PLANE {
 					name = "";
 					scope = 0;
 					faction = "VS_C_4RANGER";
-					side = 2;
+					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = MULTICAM_PILOT;
+						vehicle = HELIPILOT;
 						rank = "PRIVATE";
 					};
 					class Unit1 {
 						position[] = {0,-3,0};
-						vehicle = MULTICAM_PILOT;
+						vehicle = HELIPILOT;
 						rank = "PRIVATE";
 					};
 				};
-				class MULTICAM_Gunship {
+				class MultiCam_Gunship {
 					name = "";
 					scope = 0;
 					faction = "VS_C_4RANGER";
-					side = 2;
+					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = MULTICAM_PILOT;
+						vehicle = HELIPILOT;
 						rank = "PRIVATE";
 					};
 					class Unit1 {
 						position[] = {0,-3,0};
-						vehicle = MULTICAM_FWCREW;
+						vehicle = HELICREW;
 						rank = "PRIVATE";
 					};
 					class Unit2{
 						position[] = {0,-6,0};
-						vehicle = MULTICAM_FWCREW;
+						vehicle = HELICREW;
 						rank = "PRIVATE";
 					};
 					class Unit3{
 						position[] = {0,-9,0};
-						vehicle = MULTICAM_FWCREW;
+						vehicle = HELICREW;
 						rank = "PRIVATE";
 					};
 				};
-				class MULTICAM_VIC {
+				class MultiCam_VIC {
 					name = "";
 					scope = 0;
 					faction = "VS_C_4RANGER";
-					side = 2;
+					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
-						vehicle = MULTICAM_VICCREW;
+						vehicle = HELICREW;
 						rank = "PRIVATE";
 					};
 					class Unit1 {
 						position[] = {0,-3,0};
-						vehicle = MULTICAM_VICCREW;
+						vehicle = HELICREW;
 						rank = "PRIVATE";
 					};
 					class Unit2{
 						position[] = {0,-6,0};
-						vehicle = MULTICAM_VICCREW;
-						rank = "PRIVATE";
-					};
-				};
-				class MULTICAM_defaults {
-					name = "";
-					scope = 0;
-					faction = "VS_C_4RANGER";
-					side = 2;
-					class Unit0 {
-						position[] = {0,0,0};
-						vehicle = MULTICAM_TEAMLEADER;
-						rank = "PRIVATE";
-					};
-					class Unit1 {
-						position[] = {0,-3,0};
-						vehicle = MULTICAM_SURGEON;
-						rank = "PRIVATE";
-					};
-					class Unit2{
-						position[] = {0,-6,0};
-						vehicle = MULTICAM_MEDIC;
-						rank = "PRIVATE";
-					};
-					class Unit3 {
-						position[] = {0,-9,0};
-						vehicle = MULTICAM_RIFLEMAN;
-						rank = "PRIVATE";
-					};
-					class Unit4 {
-						position[] = {1,0,0};
-						vehicle = MULTICAM_CADET;
-						rank = "PRIVATE";
-					};
-					class Unit5 {
-						position[] = {1,-3,0};
-						vehicle = MULTICAM_PILOT;
-						rank = "PRIVATE";
-					};
-					class Unit6 {
-						position[] = {1,-6,0};
-						vehicle = MULTICAM_HELIPILOT;
-						rank = "PRIVATE";
-					};
-					class Unit7 {
-						position[] = {1,-9,0};
-						vehicle = MULTICAM_FWCREW;
-						rank = "PRIVATE";
-					};
-					class Unit8 {
-						position[] = {2,0,0};
-						vehicle = MULTICAM_HELICREW;
-						rank = "PRIVATE";
-					};
-					class Unit9 {
-						position[] = {2,-3,0};
-						vehicle = MULTICAM_VICCREW;
+						vehicle = HELICREW;
 						rank = "PRIVATE";
 					};
 				};
@@ -302,7 +244,7 @@ class CfgGroups
 					name = "";
 					scope = 0;
 					faction = "VS_C_4RANGER";
-					side = 2;
+					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = PACIFIC_ASTEAMLEADER;
@@ -318,7 +260,7 @@ class CfgGroups
 					name = "";
 					scope = 0;
 					faction = "VS_C_4RANGER";
-					side = 2;
+					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = PACIFIC_TEAMLEADER;
@@ -365,7 +307,7 @@ class CfgGroups
 					name = "";
 					scope = 0;
 					faction = "VS_C_4RANGER";
-					side = 2;
+					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = PACIFIC_TEAMLEADER;
@@ -391,7 +333,7 @@ class CfgGroups
 					name = "";
 					scope = 0;
 					faction = "VS_C_4RANGER";
-					side = 2;
+					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = PACIFIC_TEAMLEADER;
@@ -412,7 +354,7 @@ class CfgGroups
 					name = "";
 					scope = 0;
 					faction = "VS_C_4RANGER";
-					side = 2;
+					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = WOODLAND_ASTEAMLEADER;
@@ -428,7 +370,7 @@ class CfgGroups
 					name = "";
 					scope = 0;
 					faction = "VS_C_4RANGER";
-					side = 2;
+					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = WOODLAND_TEAMLEADER;
@@ -475,7 +417,7 @@ class CfgGroups
 					name = "";
 					scope = 0;
 					faction = "VS_C_4RANGER";
-					side = 2;
+					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = WOODLAND_TEAMLEADER;
@@ -501,7 +443,7 @@ class CfgGroups
 					name = "";
 					scope = 0;
 					faction = "VS_C_4RANGER";
-					side = 2;
+					side = 1;
 					class Unit0 {
 						position[] = {0,0,0};
 						vehicle = WOODLAND_TEAMLEADER;

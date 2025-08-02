@@ -31,10 +31,25 @@ if (!isServer) exitWith {
 
 if (_logic getVariable ["HasArsenal", false]) then {
 	private _whitelist = [_logic getVariable ["ArsenalFilter", ""]] call vs_core_fnc_getArsenalFilter;
-
+	[format["Current climate: %1", missionNamespace getVariable (format["vs_core_climate_%1", worldName])], "core\XEH_postInit.sqf"] call vs_core_fnc_log;
+	private _climate = missionNamespace getVariable [format["vs_core_climate_%1", worldName], "all"];
+	private _WoodlandAllowlist = parseSimpleArray VS_core_camo_whitelist_woodland;
+	private _ArcticAllowlist = parseSimpleArray VS_core_camo_whitelist_arctic;
+	private _DesertAllowlist = parseSimpleArray VS_core_camo_whitelist_desert;
+	private _MulticamAllowlist = parseSimpleArray VS_core_camo_whitelist_multicam;
+	private _allAllowlist = _WoodlandAllowlist + _ArcticAllowlist + _DesertAllowlist + _MulticamAllowlist;
+	private _camoAllowlist = [];
+	switch (_climate) do {
+	    case "woodland": { _camoAllowlist = _WoodlandAllowlist; };
+	    case "arctic": { _camoAllowlist = _ArcticAllowlist; };
+	    case "desert": { _camoAllowlist = _DesertAllowlist; };
+	    case "multicam": { _camoAllowlist = _MulticamAllowlist; };
+	    case "all": { _camoAllowlist = _allAllowlist; };
+	};
 	{
 		[_x, [], true] call ace_arsenal_fnc_initBox;
 		[_x, _whitelist, true] call ace_arsenal_fnc_addVirtualItems;
+        [_x, _camoAllowlist, true] call ace_arsenal_fnc_addVirtualItems;
 		[format["Added %1 filtered arsenal to %2", _whitelist, _x], "core\functions\common\fn_arsenal.sqf"] call vs_core_fnc_log;
 	} foreach _objects;
 };

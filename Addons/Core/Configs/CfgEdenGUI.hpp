@@ -22,7 +22,7 @@ class VS_Core_edenGUI {
         };
         class VS_Core_title: RscText {
             idc = 1004;
-            text = "Load Black Aegis - PMC Slots & Modules";
+            text = "Load 4 Ranger - Slots & Modules";
             x = 0.112499;
             y = 0.04;
             w = 0.554999;
@@ -50,9 +50,9 @@ class VS_Core_edenGUI {
             tooltip = "Select camo option";
             sizeEx = 1.1 * GUI_GRID_H;
 			class Items {
-				class BLACK {
-					text = "Black";
-					data = "BLACK";
+				class MTC {
+					text = "MultiCam";
+					data = "MultiCam";
 				};
 			};
         };
@@ -313,7 +313,7 @@ class VS_Core_edenGUI {
                     _camo, _numberOfSections, _ifvCrew, _tankCrew, _helicopters, _jets, _gunships, _planes
                 ];
 
-                [Shield, Olympus, _camo, _numberOfSections, _ifvCrew, _tankCrew, _helicopters, _jets, _gunships, _planes, true] call VS_Core_fnc_edenCreateAssets;
+                [Zero, _camo, _numberOfSections, _ifvCrew, _tankCrew, _helicopters, _jets, _gunships, _planes] call VS_Core_fnc_edenCreateAssets;
             ";
         };
         class VS_Core_cancelButton: RscButtonMenuCancel {
