@@ -95,7 +95,7 @@ private _VS_core_settings = [
         true
     ],
 	[
-        "VS_core_camo_whitelist_Artic",
+        "VS_core_camo_whitelist_artic",
         "EDITBOX",
         ["Artic", "Artic Camo whitelist"],
         ["Viking Studios Arsenal", "Uniform Whitelists"],

@@ -9,7 +9,7 @@ Author:
 ---------------------------------------------------------------------------- */
 
 class CfgMainMenuSpotlight {
-	class vsc_4ranger_operations_server {
+	class vsc_4ranger_a_operations_server {
 		text = "Main Server";
 		textIsQuote = 0;
 		picture = "\x\VS_C\core\img\4RANGER.paa";
