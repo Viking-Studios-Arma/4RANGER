@@ -42,6 +42,7 @@ class CfgFunctions {
 			//Original
 			class limitArsenal {};
 			class makeDoctor {};
+			class setAcre {};
 		};
 
 		class zeus_modules {
@@ -91,3 +92,4 @@ class Extended_PostInit_EventHandlers {
 #include "configs\CfgVehicleDeploy.hpp"
 #include "configs\CfgZenMenu.hpp"
 #include "configs\CfgZeusActions.hpp"
+#include "configs\CfgHideChats.hpp"
