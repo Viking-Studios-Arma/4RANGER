@@ -27,7 +27,7 @@ if (Is-DevBranch) {
     Write-Output "Stable branch detected, using build path: $buildPath"
 }
 
-$modPrefix      = "4RANGER_"
+$modPrefix      = "4RANGER_Core"
 $downloadUrl    = "https://github.com/KoffeinFlummi/armake/releases/download/v0.6.3/armake_v0.6.3.zip"
 $armake2        = "$projectRoot\tools\armake2.exe"
 $armake         = "$projectRoot\tools\armake.exe"
