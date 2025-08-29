@@ -33,17 +33,17 @@ if (_logic getVariable ["HasArsenal", false]) then {
 	private _whitelist = [_logic getVariable ["ArsenalFilter", ""]] call vs_core_fnc_getArsenalFilter;
 	[format["Current climate: %1", missionNamespace getVariable (format["vs_core_climate_%1", worldName])], "core\XEH_postInit.sqf"] call vs_core_fnc_log;
 	private _climate = missionNamespace getVariable [format["vs_core_climate_%1", worldName], "all"];
-	private _WoodlandAllowlist = parseSimpleArray VS_core_camo_whitelist_woodland;
+	private _TropicalAllowlist = parseSimpleArray VS_core_camo_whitelist_tropical;
 	private _ArcticAllowlist = parseSimpleArray VS_core_camo_whitelist_arctic;
 	private _DesertAllowlist = parseSimpleArray VS_core_camo_whitelist_desert;
-	private _MulticamAllowlist = parseSimpleArray VS_core_camo_whitelist_multicam;
-	private _allAllowlist = _WoodlandAllowlist + _ArcticAllowlist + _DesertAllowlist + _MulticamAllowlist;
+	private _TemperateAllowlist = parseSimpleArray VS_core_camo_whitelist_temperate;
+	private _allAllowlist = _TropicalAllowlist + _ArcticAllowlist + _DesertAllowlist + _TemperateAllowlist;
 	private _camoAllowlist = [];
 	switch (_climate) do {
-	    case "woodland": { _camoAllowlist = _WoodlandAllowlist; };
+	    case "tropical": { _camoAllowlist = _tropicalAllowlist; };
 	    case "arctic": { _camoAllowlist = _ArcticAllowlist; };
 	    case "desert": { _camoAllowlist = _DesertAllowlist; };
-	    case "multicam": { _camoAllowlist = _MulticamAllowlist; };
+	    case "temperate": { _camoAllowlist = _TemperateAllowlist; };
 	    case "all": { _camoAllowlist = _allAllowlist; };
 	};
 	{

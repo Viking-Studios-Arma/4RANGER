@@ -74,13 +74,7 @@ class CfgUnitInsignia
         author="Amateur-God (Carmichael)";
         texture="x\VS_C\Custom_Patches\data\carmichael_alt_2.paa";
     };
-	class VSC_P_Fallon_A
-	{
-		displayName="Fallon";
-		author="Amateur-God (Carmichael)";
-		texture="x\VS_C\Custom_Patches\data\fallon_alt.paa";
-	};
-	class VSC_P_Jackal_A
+/*	class VSC_P_Jackal_A
     {
         displayName="Jackal";
         author="Amateur-God (Carmichael)";
@@ -104,4 +98,5 @@ class CfgUnitInsignia
         author="Amateur-God (Carmichael)";
         texture="x\VS_C\Custom_Patches\data\snow.paa";
     };
+*/
 };

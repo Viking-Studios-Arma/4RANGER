@@ -24,10 +24,10 @@ params [["_message", "No Message", []], ["_fileName", "N/A", []]];
 
 if (vs_core_debug) then {
 	if (_fileName isEqualTo "N/A") then {
-		systemChat (format["[Black Aegis - PMC Debug] %1", _message]);
-		diag_log format["[Black Aegis - PMC Debug] %1", _message];
+		systemChat (format["[4 Ranger Debug] %1", _message]);
+		diag_log format["[4 Ranger Debug] %1", _message];
 	} else {
-		systemChat (format["[Black Aegis - PMC Debug] [%1] %2", _fileName, _message]);
-		diag_log format["[Black Aegis - PMC Debug] [%1] %2", _fileName, _message];
+		systemChat (format["[4 Ranger Debug] [%1] %2", _fileName, _message]);
+		diag_log format["[4 Ranger Debug] [%1] %2", _fileName, _message];
 	};
 };

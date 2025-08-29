@@ -13,7 +13,7 @@ Author:
 class CfgFactionClasses {
 	class NO_CATEGORY;
 	class VS_CORE_Modules : NO_CATEGORY {
-		displayName = "Black Aegis Modules";
+		displayName = "4 RANGER Modules";
 	};
 };
 
@@ -99,12 +99,12 @@ class CfgVehicles {
 		};
 
 		class ModuleDescription : ModuleDescription {
-			description = "Add Black Aegis - PMC barracks functions to synced objects";
+			description = "Add 4 Ranger barracks functions to synced objects";
 			sync[] = {"LocationArea_F"};
 
 			class LocationArea_F {
 				description[] = {
-					"Add barracks functions to synced objects that give the players certain Black Aegis - PMC functions to use via ACE interaction.",
+					"Add barracks functions to synced objects that give the players certain 4 Ranger functions to use via ACE interaction.",
 					"",
 					"Barracks functions include:",
 					"- Filtered Arsenal",
