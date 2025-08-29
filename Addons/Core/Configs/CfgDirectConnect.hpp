@@ -18,7 +18,7 @@ class CfgMainMenuSpotlight {
 		actionText = "Connect";
 		condition = true; //Lies
 	};
-    class vsc_4ranger_backup_server {
+    /*class vsc_4ranger_backup_server {
 		text = "2nd Server";
 		textIsQuote = 0;
 		picture = "\x\VS_C\core\img\4RANGER.paa";
@@ -26,7 +26,7 @@ class CfgMainMenuSpotlight {
 		action = "connectToServer [""45.92.44.67"", 2302, ""ContactWaitOut""]"; //This Goes [""IP"", Port, ""Password""], if you dont want the password visible just leave the pasword section empty.
 		actionText = "Connect";
 		condition = true;
-	};
+	};*/
     class vsc_4ranger_Lib_server {
 		text = "Liberation Server";
 		textIsQuote = 0;
