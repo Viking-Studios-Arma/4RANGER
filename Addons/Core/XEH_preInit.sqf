@@ -127,7 +127,7 @@ private _prettyName = "";
 		["4RANGER Arsenal", "World Climates"],
 		[
 			["all", "woodland", "multicam", "desert", "arctic"], // Code (keep the same, else settings will reset)
-			["All", "Woodland", "Multicam", "Desert", "Arctic"], // Display name
+			["All", "Tropical", "Temperate", "Desert", "Arctic"], // Display name
 			0
 		],
 		1,
