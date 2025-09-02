@@ -61,7 +61,7 @@ private _VS_core_settings = [
 	[
         "VS_core_camo_whitelist_woodland",
         "EDITBOX",
-        ["Woodland", "Woodland Camo whitelist"],
+        ["Tropical", "Tropical Camo whitelist"],
         ["Viking Studios Arsenal", "Uniform Whitelists"],
         "[]",
         1,
@@ -73,7 +73,7 @@ private _VS_core_settings = [
 	[
         "VS_core_camo_whitelist_multicam",
         "EDITBOX",
-        ["Multicam", "Multicam Camo whitelist"],
+        ["Temperate", "Temperate Camo whitelist"],
         ["Viking Studios Arsenal", "Uniform Whitelists"],
         "[]",
         1,
@@ -109,18 +109,6 @@ private _VS_core_settings = [
 ];
 
 {_x call CBA_Settings_fnc_init;} forEach _VS_core_settings;
-
-//setBabel ACRE2
-
-["unit", {
-    params ["_player"];
-    switch ((getNumber (configFile >> "CfgVehicles" >> (typeOf _player) >> "side"))) do {
-        case 1: { ["en"] call acre_api_fnc_babelSetSpokenLanguages; };
-        case 0: { ["ru"] call acre_api_fnc_babelSetSpokenLanguages; };
-        case 2: { ["ab"] call acre_api_fnc_babelSetSpokenLanguages; };
-        default {  ["ab","en","ru"] call acre_api_fnc_babelSetSpokenLanguages; };
-    };
-}, true] call CBA_fnc_addPlayerEventHandler;
 
 //SET RADIO CHANNEL NAMES ACRE 2
 
