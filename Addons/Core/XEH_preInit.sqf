@@ -110,6 +110,7 @@ private _VS_core_settings = [
 
 {_x call CBA_Settings_fnc_init;} forEach _VS_core_settings;
 
+
 //SET RADIO CHANNEL NAMES ACRE 2
 
 call vs_core_fnc_setAcre;
