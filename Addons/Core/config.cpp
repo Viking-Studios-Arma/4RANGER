@@ -43,7 +43,6 @@ class CfgFunctions {
 			class limitArsenal {};
 			class makeDoctor {};
 			class setAcre {};
-			class setBabel {};
 		};
 
 		class zeus_modules {
