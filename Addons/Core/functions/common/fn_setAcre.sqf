@@ -11,11 +11,11 @@
 
 //set channel names
 //PRC-148
-["ACRE_PRC148", "Ranger", 1, "label", "COMPANY NET"] call acre_api_fnc_setPresetChannelField;
-["ACRE_PRC148", "Ranger", 2, "label", "1ST PLATOON NET"] call acre_api_fnc_setPresetChannelField;
-["ACRE_PRC148", "Ranger", 3, "label", "CONVOY NET"] call acre_api_fnc_setPresetChannelField;
-["ACRE_PRC148", "Ranger", 4, "label", "AIR NET"] call acre_api_fnc_setPresetChannelField;
-["ACRE_PRC148", "Ranger", 5, "label", "JFO NET"] call acre_api_fnc_setPresetChannelField;
+["ACRE_PRC148", "Ranger", 1, "name", "COMPANY NET"] call acre_api_fnc_setPresetChannelField;
+["ACRE_PRC148", "Ranger", 2, "name", "1ST PLATOON NET"] call acre_api_fnc_setPresetChannelField;
+["ACRE_PRC148", "Ranger", 3, "name", "CONVOY NET"] call acre_api_fnc_setPresetChannelField;
+["ACRE_PRC148", "Ranger", 4, "name", "AIR NET"] call acre_api_fnc_setPresetChannelField;
+["ACRE_PRC148", "Ranger", 5, "name", "JFO NET"] call acre_api_fnc_setPresetChannelField;
 
 //PRC-117F
 ["ACRE_PRC117F", "Ranger", 1, "name", "COMPANY NET"] call acre_api_fnc_setPresetChannelField;
