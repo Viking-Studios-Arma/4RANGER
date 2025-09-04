@@ -141,34 +141,7 @@ License GPL-2.0
 
 
 //setBabel/frequencies ACRE2
-
-//setBabel ACRE2
-["en","English"] call acre_api_fnc_babelAddLanguageType;
-["fa","Farsi"] call acre_api_fnc_babelAddLanguageType;
-["gr","Greek"] call acre_api_fnc_babelAddLanguageType;
-["it","Italian"] call acre_api_fnc_babelAddLanguageType;
-["pl","Polish"] call acre_api_fnc_babelAddLanguageType;
-["ru","Russian"] call acre_api_fnc_babelAddLanguageType;
-["fr","French"] call acre_api_fnc_babelAddLanguageType;
-["ab","Arabic"] call acre_api_fnc_babelAddLanguageType;
-["zh","Chinese"] call acre_api_fnc_babelAddLanguageType;
-["es","Spanish"] call acre_api_fnc_babelAddLanguageType;
-["de","German"] call acre_api_fnc_babelAddLanguageType;
-["tr","Turkish"] call acre_api_fnc_babelAddLanguageType;
-["ko","Korean"] call acre_api_fnc_babelAddLanguageType;
-["jp","Japanese"] call acre_api_fnc_babelAddLanguageType;
-["pt","Portuguese"] call acre_api_fnc_babelAddLanguageType;
-["vi","Vietnamese"] call acre_api_fnc_babelAddLanguageType;
-["ar","Arabic"] call acre_api_fnc_babelAddLanguageType;
-["cs","Czech"] call acre_api_fnc_babelAddLanguageType;
-["bg","Bulgarian"] call acre_api_fnc_babelAddLanguageType;
-["uk","Ukrainian"] call acre_api_fnc_babelAddLanguageType;
-["he","Hebrew"] call acre_api_fnc_babelAddLanguageType;
 [false, true] call acre_api_fnc_setupMission;
-[ [west, "English"], [east, "Russian"], [resistance, "Farsi"], [civilian, "English", "Russian", "Farsi"] ] call acre_api_fnc_babelSetupMission;
-
-
-call vs_core_fnc_setBabel;
 
 //make units doctors
 {
