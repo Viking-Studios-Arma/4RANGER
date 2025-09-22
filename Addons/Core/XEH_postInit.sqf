@@ -88,8 +88,6 @@ License GPL-2.0
 		["4RANGER - Heli Crew",[["JCA_smg_UMP_AFG_black_F","UK3CB_BAF_SFFH","SMA_SFFL_BLK","SMA_MICRO_T2",["JCA_25Rnd_45ACP_UMP_Mag",30],[],""],[],["JCA_hgun_P320_black_F","","","",["JCA_17Rnd_9x21_P320_Mag",13],[],""],["CSU15BP_Base_Rolled_FG",[["ACE_MapTools",1],["ACE_Flashlight_XL50",1],["ACE_elasticBandage",10],["ACE_packingBandage",10],["ACE_ATNAA_AntidoteInjector",1],["kat_chestSeal",2],["ACE_tourniquet",4],["ACE_splint",3],["ACE_adenosine",1]]],["CMU33P",[["ACE_EarPlugs",1],["ACE_IR_Strobe_Item",1],["ItemMicroDAGR",1],["ACE_elasticBandage",10],["ACE_packingBandage",10],["ACE_ATNAA_AntidoteInjector",1],["kat_larynx",1],["kat_suction",1],["kat_pocketBVM",1],["UK3CB_BAF_SmokeShell",2,1],["ACE_CTS9",1,1],["VSC_30Rnd_556x45_L403A1",4,30]]],["UK3CB_BAF_B_Kitbag_OLI",[["MK503",1],["CBRN_gasmaskFilter",5],["CBRN_DuctTape",5],["CBRN_sealant",5],["ACE_wirecutter",1],["ACE_EntrenchingTool",1],["tsp_lockpick",1],["tsp_breach_popper_auto_mag",5,1]]],"rhsusf_hgu56p_visor_mask","",[],["ItemMap","ItemGPS","","ItemCompass","KAT_ChemicalDetector",""]],[["ace_arsenal_insignia","VSC_P_4RANGER_MC_TRF"]]]  call ace_arsenal_fnc_addDefaultLoadout;
 		//-------------------------------------------------------------------------------
 	};
-
-
 /*
 
 	if (_climate isEqualTo "woodland" || _climate isEqualTo "all") then {
@@ -138,10 +136,6 @@ License GPL-2.0
 	};
 	[player] call vs_core_fnc_limitArsenal;
 };
-
-
-//setBabel/frequencies ACRE2
-[false, true] call acre_api_fnc_setupMission;
 
 //make units doctors
 {

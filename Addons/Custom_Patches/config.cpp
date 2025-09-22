@@ -50,12 +50,6 @@ class CfgUnitInsignia
         author="Amateur-God (Carmichael)";
         texture="x\VS_C\Custom_Patches\data\unitPatch_blk.paa";
     };
-    //class VSC_P_4RANGER_SNOW
-    //{
-    //    displayName="4 RANGER (SNOW)";
-    //    author="Amateur-God (Carmichael)";
-    //    texture="x\VS_C\Custom_Patches\data\unitPatch_snow.paa";
-    //};
 	class VSC_P_Carmichael_A
 	{
 		displayName="Carmichael";

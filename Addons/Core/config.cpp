@@ -42,7 +42,6 @@ class CfgFunctions {
 			//Original
 			class limitArsenal {};
 			class makeDoctor {};
-			class setAcre {};
 		};
 
 		class zeus_modules {
