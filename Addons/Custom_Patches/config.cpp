@@ -68,29 +68,10 @@ class CfgUnitInsignia
         author="Amateur-God (Carmichael)";
         texture="x\VS_C\Custom_Patches\data\carmichael_alt_2.paa";
     };
-/*	class VSC_P_Jackal_A
-    {
-        displayName="Jackal";
-        author="Amateur-God (Carmichael)";
-        texture="x\VS_C\Custom_Patches\data\jackal.paa";
-    };
-    class VSC_P_Jackal_B
-    {
-        displayName="Jackal Alt";
-        author="Amateur-God (Carmichael)";
-        texture="x\VS_C\Custom_Patches\data\jackal_alt.paa";
-    };
-    class VSC_P_Broad_A
+    /*class VSC_P_Broad_A
     {
         displayName="Broad";
         author="Amateur-God (Carmichael)";
         texture="x\VS_C\Custom_Patches\data\broad.paa";
-    };
-    class VSC_P_Snow_A
-    {
-        displayName="Snow";
-        author="Amateur-God (Carmichael)";
-        texture="x\VS_C\Custom_Patches\data\snow.paa";
-    };
-*/
+    };*/
 };
