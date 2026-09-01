@@ -5,7 +5,6 @@
 #define MULTICAM_PLATOONASLEADER "VSC_4RANGER_MC_PL_2IC"
 #define MULTICAM_MEDIC "VSC_4RANGER_MC_Medic"
 #define MULTICAM_RIFLEMAN "VSC_4RANGER_MC_Rifleman"
-#define MULTICAM_SURGEON "VSC_4RANGER_MC_Surgeon"
 #define HELIPILOT "VSC_4RANGER_Helicopter_Pilot"
 #define HELICREW "VSC_4RANGER_Helicopter_Crew"
 
@@ -136,7 +135,7 @@ class CfgGroups
 					};
 					class Unit2{
 						position[] = {0,-6,0};
-						vehicle = MULTICAM_SURGEON;
+						vehicle = MULTICAM_MEDIC;
 						rank = "PRIVATE";
 					};
 					class Unit3 {

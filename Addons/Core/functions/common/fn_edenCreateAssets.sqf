@@ -219,8 +219,7 @@ for "_i" from 1 to _numberOfSections do {
 				_x set3DENAttribute ["description", format ["2: %1 Platoon Sergeant", ((_callsign select [0, 1]) + "19")]];
 			} else {
 				if (_x getUnitTrait "Medic") then {
-					_x set3DENAttribute ["description", "3: Surgeon"];
-					_x set3DENAttribute ["init", "this setVariable ['ace_medical_medicClass', 2, true];"];
+					_x set3DENAttribute ["description", "3: Combat Medic"];
 				} else {
 					_x set3DENAttribute ["description", "4: Rifleman"];
 				};
@@ -230,14 +229,6 @@ for "_i" from 1 to _numberOfSections do {
 	leader _group set3DENAttribute _attributeTwo;
 	set3DENSelected [];
 } forEach _sections;
-
-{
-	private _unitDisplayName = getText (configOf _x >> "displayName");
-	if (_unitDisplayName == "Surgeon" || typeOf _x == "VSC_4RANGER_MC_Surgeon")
-	    then {
-			_x set3DENAttribute ["init", "this setVariable ['ace_medical_medicClass', 2, true];"];
-		};
-} forEach allUnits;
 
 // Initialize vehicle position counter
 _numIFV = _num;
@@ -418,10 +409,3 @@ for "_i" from 1 to _jets do {
     _numJet = _numJet + 2;
 };
 
-// Adjust medic class for surgeons
-{
-    private _unitDisplayName = getText (configOf _x >> "displayName");
-    if (_unitDisplayName == "Surgeon" || typeOf _x == "VSC_4RANGER_MC_Surgeon") then {
-        _x set3DENAttribute ["init", "this setVariable ['ace_medical_medicClass', 2, true];"];
-    };
-} forEach allUnits;
